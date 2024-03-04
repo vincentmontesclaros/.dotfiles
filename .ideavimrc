@@ -1,0 +1,111 @@
+source ~/.vimrc
+
+""" map leader to space ---------------------
+let mapleader=" "
+
+""" Plugins  --------------------------------
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set NERDTree
+set ReplaceWithRegister
+set which-key
+""" disable which-key's timeout
+set notimeout
+set highlightedyank
+
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],(:),<:>"
+let g:WhichKey_ShowVimActions = "true"
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+""" Mappings --------------------------------
+map <leader>f <Plug>(easymotion-s)
+map <leader>e <Plug>(easymotion-f)
+
+""" map <leader>d <Action>(Debug)
+map <leader>c <Action>(Stop)
+
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+map <S-Space> <Action>(GotoNextError)
+
+""" Search
+let g:WhichKeyDesc_search = "<leader>s Search"
+map <leader>sc <Action>(GotoClass)
+let g:WhichKeyDesc_search_class = "<leader>sc Class"
+map <leader>se <Action>(SearchEverywhere)
+let g:WhichKeyDesc_search_everywhere = "<leader>se Everywhere"
+map <leader>sf <Action>(FindInPath)
+let g:WhichKeyDesc_search_in_path = "<leader>sr Path"
+map <leader>sr <Action>(Replace)
+let g:WhichKeyDesc_search_and_replace = "<leader>sr Replace"
+map <leader>sR <Action>(ReplaceInPath)
+let g:WhichKeyDesc_search_and_replace_in_path = "<leader>sr Replace in Path"
+map <leader>su <Action>(ShowUsages)
+let g:WhichKeyDesc_search_usages = "<leader>su Usages"
+
+""" Git
+let g:WhichKeyDesc_git = "<leader>g Git"
+map <leader>ga <Action>(Annotate)
+let g:WhichKeyDesc_git_annotate = "<leader>ga Annotate"
+map <leader>gf <Action>(Git.Fetch)
+let g:WhichKeyDesc_git_fetch = "<leader>gf Fetch"
+map <leader>gp <Action>(Git.Pull)
+let g:WhichKeyDesc_git_pull = "<leader>gp Pull"
+map <leader>gh <Action>(Vcs.ShowTabbedFileHistory)
+let g:WhichKeyDesc_git_history = "<leader>gh History"
+
+""" Go
+map <leader>gd <Action>(GotoDeclaration)
+let g:WhichKeyDesc_goto_declaration = "<leader>gd Declaration"
+map <leader>gi <Action>(GotoImplementation)
+let g:WhichKeyDesc_goto_implementation = "<leader>gi Implementation"
+
+""" Language
+let g:WhichKeyDesc_language = "<leader>l Language"
+map <leader>lr <Action>(RenameElement)
+let g:WhichKeyDesc_language_rename = "<leader>lr Rename"
+map <leader>lf <Action>(ReformatCode) |"<Action>(SilentCodeCleanup)
+let g:WhichKeyDesc_language_reformat_code = "<leader>lf Reformat Code"
+
+""" Run
+let g:WhichKeyDesc_run = "<leader>r Run"
+map <leader>rc <Action>(RunCoverage)
+let g:WhichKeyDesc_run_coverage = "<leader>rc Run with Coverage"
+map <leader>rn <Action>(RunClass)
+let g:WhichKeyDesc_run_class = "<leader>rn Run Class"
+
+""" Tool windows
+let g:WhichKeyDesc_tools = "<leader>t Tools"
+map <leader>tg <Action>(ActivateVersionControlToolWindow)
+let g:WhichKeyDesc_tools_git = "<leader>tg Git"
+
+""" Debugging
+let g:WhichKeyDesc_debugging = "<leader>d Debugging"
+map <leader>dd <Action>(ToggleLineBreakpoint)
+let g:WhichKeyDesc_debugging_toggle_breakpoint = "<leader>dd Toggle Breakpoint"
+map <leader>dn <Action>(DebugClass)
+let g:WhichKeyDesc_debugging_debug_class = "<leader>dn Debug Class"
+
+""" Niceties
+map <leader>q <Action>(CloseContent)
+let g:WhichKeyDesc_close_content = "<leader>q Close Content"
+map <leader>w <Action>(SaveAll)
+let g:WhichKeyDesc_save_all = "<leader>w Save All"
+map <leader>a <Action>(ShowIntentionActions)
+let g:WhichKeyDesc_show_intention_actions= "<leader>a Show Intention Actions"
+map <leader>p <Action>(SelectInProjectView)
+let g:WhichKeyDesc_select_in_project_view = "<leader>p Select in Project View"
+map <leader>hi <Action>(ShowHoverInfo)
+let g:WhichKeyDesc_hover_info = "<leader>hi Hover Info"
+map <leader>z <Action>(ToggleDistractionFreeMode)
+let g:WhichKeyDesc_toggle_distraction_free_mode = "<leader>z Toggle Distraction Free Mode"
+map <leader>o <Action>(FileStructurePopup)
+let g:WhichKeyDesc_file_structure_popup = "<leader>o File Structure Popup"
