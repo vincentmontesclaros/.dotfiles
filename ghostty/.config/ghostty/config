@@ -1,0 +1,9 @@
+background-opacity = 0.50
+background-blur = true
+
+theme = Catppuccin Mocha
+custom-shader = ~/.config/ghostty/shaders/in-game-crt-cursor.glsl
+custom-shader = ~/.config/ghostty/shaders/in-game-crt.glsl
+custom-shader-animation = true
+
+font-size = 10
