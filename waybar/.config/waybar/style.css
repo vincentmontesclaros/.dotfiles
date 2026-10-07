@@ -1,0 +1,59 @@
+@define-color foreground #eeeeee;
+@define-color foreground-inactive #aaaaaa;
+@define-color background #000000;
+@define-color background-transparent rgba(30, 30, 46, 0.6);
+@define-color mauve     #cba6f7;
+
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+#waybar {
+    color: @foreground;
+    background-color: @background-transparent;
+}
+
+#workspaces button {
+    color: @foreground;
+    background: transparent;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding-left: 0.7em;
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button:hover,
+#workspaces button:active {
+    background: transparent;
+    background-color: transparent;
+}
+
+#workspaces button.focused {
+    color: @mauve;
+    font-weight: bold;
+    background: transparent; 
+}
+
+#workspaces button.empty {
+    color: @foreground-inactive;
+}
+
+#memory {
+    padding-left: 1em
+}
+
+#custom-platform-profile,
+#custom-weather,
+#wireplumber,
+#battery,
+#idle_inhibitor,
+#language,
+#network,
+#bluetooth,
+#tray {
+    padding-right: 1em 
+}
