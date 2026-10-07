@@ -1,0 +1,167 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 20,
+  "spacing": 5,
+  "modules-left": [
+    "sway/workspaces"
+  ],
+  "modules-center": [
+    "clock",
+    "custom/weather"
+  ],
+  "modules-right": [
+    "wireplumber",
+    "wireplumber#microphone",
+    "battery",
+    "sway/language",
+    "idle_inhibitor",
+    "network",
+    "bluetooth",
+    "custom/platform-profile",
+    "tray"
+  ],
+  "sway/workspaces": {
+    "format": "<span>{name}</span>",
+    "on-click": "activate",
+    "format-icons": {
+      "focused": "\uf444",
+      "default": "\uf4c3"
+    },
+    "icon-size": 10,
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+  "clock": {
+    "format": "{:%Y.%m.%d | %H:%M}",
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'>{}</span>",
+        "weeks": "<span color='#99ffdd'>W{}</span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-middle": "shift_reset",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "wireplumber": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "\udb81\udf5f",
+    "format-icons": [
+      "\uf026",
+      "\uf027",
+      "\uf028"
+    ],
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "pavucontrol -t 3",
+    "max-volume": 100,
+    "scroll-step": 5
+  },
+  "wireplumber#microphone": {
+    "node-type": "Audio/Source",
+    "format": "{volume}% \uf130",
+    "format-muted": "\uf131",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "on-click-right": "pavucontrol -t 4",
+    "scroll-step": 5
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "interval": 60,
+    "format": "{icon}  {capacity}%",
+    "format-charging": "󰂄  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-icons": [
+      "\uf244",
+      "\uf243",
+      "\uf242",
+      "\uf241",
+      "\uf240"
+    ]
+  },
+  "memory": {
+    "interval": 30,
+    "format": "\uf4bc  {used:0.1f}G"
+  },
+  "temperature": {
+    "format": "{temperatureC}°C"
+  },
+  "network": {
+    "format": "",
+    "format-ethernet": "\udb83\udc9d",
+    "format-wifi": "{icon}",
+    "format-disconnected": "\udb83\udc9c",
+    "format-icons": [
+      "\udb82\udd2f",
+      "\udb82\udd1f",
+      "\udb82\udd22",
+      "\udb82\udd25",
+      "\udb82\udd28"
+    ],
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname}",
+    "tooltip-format-disconnected": "Disconnected"
+  },
+  "bluetooth": {
+    "format": "\udb80\udcaf",
+    "format-disabled": "\udb80\udcb2",
+    "format-connected": "\udb80\udcb1",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "blueman-manager"
+  },
+  "sway/language": {
+    "format": "{short}"
+  },
+  "tray": {
+    "icon-size": 12,
+    "spacing": 8
+  },
+  "custom/platform-profile": {
+    "format": "{icon} ",
+    "exec": "~/.config/waybar/platform_profile.sh",
+    "on-click": "~/.config/waybar/platform_profile_cycle.sh",
+    "return-type": "json",
+    "interval": 1,
+    "format-icons": {
+      "low-power": "\udb80\udf2a",
+      "balanced": "\udb81\uddd1",
+      "performance": "\uf427",
+      "default": "?"
+    }
+  },
+  "custom/weather": {
+    "format": "| {text}",
+    "exec": "curl 'https://wttr.in?format=1'",
+    "interval": 600,
+    "tooltip": false
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "\udb80\udd76",
+      "deactivated": "\udb83\udfaa"
+    }
+  }
+}
