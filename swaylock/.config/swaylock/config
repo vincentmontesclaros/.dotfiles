@@ -1,0 +1,7 @@
+image=/path/to/file
+font=sans-serif
+indicator-radius=100
+indicator-thickness=10
+ring-color=808080
+ring-ver-color=00ff00
+ring-wrong-color=ff0000
